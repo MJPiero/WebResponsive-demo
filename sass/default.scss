@@ -1,0 +1,77 @@
+/* default style for Mob
+ * create by majing
+ * 2016/2/20
+ */
+
+@import "normalize";
+@import "compass/support";
+@import "compass/css3";
+
+$legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true;
+$legacy-support-for-ie8: true;
+$legacy-support-for-mozilla: true;
+$supported-browsers: browsers();
+$debug-browser-support: true;   //开发模式
+
+//默认参数
+//===============================================
+
+//页面
+$Default_CenterWidth: 26rem !default;
+$Default_MainColor: #5db32d !default;
+$Default-Transition: all 0.2s linear !default;
+$Default-BoxShadow: 1px 1px 8px rgba(0,0,0,0.6);
+
+//字体
+$Default_FontFamily: 'Microsoft Yahei','微软雅黑',Tahoma,Helvetica,Arial,sans-serif !default;
+$Default_FontSize: .35rem !default;
+$Default_FontColor: #666 !default;
+$Default_TitleColor: #333 !default;
+
+//共用
+html {
+  font-size : 20px;
+}
+@media only screen and (min-width: 401px){
+  html {
+    font-size: 25px !important;
+  }
+}
+@media only screen and (min-width: 428px){
+  html {
+    font-size: 26.75px !important;
+  }
+}
+@media only screen and (min-width: 767px){
+  html {
+    font-size: 40px !important;
+  }
+}
+
+body{
+  font-family: $Default_FontFamily;
+  font-size: $Default_FontSize;
+  color: $Default_FontColor;
+}
+
+a{
+  text-decoration: none;
+}
+
+ol,ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  @include transition($Default_Transition);
+  &:hover{
+    @include opacity(.6);
+  }
+}
+
+
+
+

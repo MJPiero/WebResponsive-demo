@@ -1,0 +1,457 @@
+/* app style for AppList
+ * create by majing
+ * 2016/03/01
+ */
+@import "default";
+
+.wrap{
+  width: $Default_CenterWidth;
+  margin: 0 auto;
+  @media only screen and (max-width: 767px) {
+    width: 320px;
+  }
+}
+%after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+// header
+.App_header{
+  $padding-top: .3rem;
+  width: 100%;
+  display: inline-block;
+  background: #151e28;
+  padding: $padding-top 0;
+  .mobileNav{
+    display: none;
+  }
+  .logo{
+    display: inline-block;
+    float: left;
+  }
+  .nav{
+    display: inline-block;
+    float: left;
+    padding-left: 1rem;
+    font-size: .4rem;
+    li{
+      display: inline-block;
+      float: left;
+      height: 1.35rem;
+      line-height: 1.35rem;
+
+      &.dropdown{
+        position: relative;
+        .fa{
+          position: absolute;
+          right: .3rem;
+          top: .5rem;
+        }
+        .self{
+          display: none;
+          width: 100%;
+          position: absolute;
+          top: 1.35rem;
+          left: 0;
+          z-index: 100;
+          background: #151e28;
+          li{
+            width: 100%;
+            display: block;
+            a{
+              padding: 0;
+              text-align: center;
+              width: 100%;
+              display: block;
+              @include border-radius(0);
+            }
+          }
+        }
+        &:hover{
+          .self{
+            display: inline-block;
+          }
+        }
+      }
+      a{
+        display: inline-block;
+        padding: 0 .8rem;
+        @include transition($Default-Transition);
+        color: #fff;
+        @include border-radius(10px);
+        &:hover{
+          color: #33ba95;
+          background: darken(#151e29,4%);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px){
+    position: relative;
+    .wrap{
+      text-align: center;
+      .mobileNav{
+        position: absolute;
+        display: inline-block;
+        left: .8rem;
+        top: .5rem;
+        cursor: pointer;
+        .fa{
+          font-size: 1.7rem;
+          color: #fff;
+        }
+      }
+      .logo{
+        float: none;
+        img{
+          height: 1.5rem;
+          padding: .3rem 0;
+        }
+      }
+      .nav{
+        display: none;
+      }
+    }
+  }
+  &:after{
+    @extend %after;
+  }
+}
+
+//main
+.App_Main{
+  width: 100%;
+  overflow-x: hidden;
+  .top{
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0 .3rem 0;
+    border-bottom: 2px solid #33ba95;
+    .title{
+      display: inline-block;
+      float: left;
+      font-size: .75rem;
+      color: #33ba95;
+    }
+    .time{
+      display: inline-block;
+      float: right;
+      line-height: 1rem;
+      @media screen and (max-width: 767px){
+        display: none;
+      }
+    }
+    @media screen and (max-width: 767px){
+      padding-left:.5rem;
+    }
+  }
+  .selectList{
+    width: 100%;
+    display: inline-block;
+    padding-bottom: .5rem;
+    border-bottom: #ddd solid 1px;
+    ul{
+      li{
+        display: inline-block;
+        float: left;
+        margin-right: .5rem;
+        span{
+          display: inline-block;
+          padding: .2rem;
+          &.box{
+            padding: .2rem  .3rem;
+            border: #ddd solid 1px;
+            @include border-radius(5px);
+            display: inline-block;
+            cursor: pointer;
+            font-size: .3rem;
+            .fa{
+              padding-left: .5rem;
+            }
+            &:after{
+              @extend %after;
+            }
+          }
+        }
+        .selectItem{
+          position: relative;
+          .drogdown{
+            display: none;
+            position: absolute;
+            top: 1.2rem;
+            left: 0;
+            background: #151e28;
+            z-index: 10;
+            @include border-radius(5px);
+            li{
+              @include transition($Default-Transition);
+              display: inline-block;
+              padding: .3rem;
+              color: #fff;
+              cursor: pointer;
+              &:hover{
+                color: #33ba95;
+              }
+            }
+            &:before{
+              content: "\f0de";
+              display: inline-block;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              position: absolute;
+              top: -.3rem;
+              left: .2rem;
+              color: #151e28;
+              font-size: .8rem;
+            }
+            @media only screen and (max-width: 401px) {
+              top: 1.7rem;
+            }
+          }
+          &.open{
+            .box{
+              background: #151e28;
+              color: #fff;
+            }
+            .drogdown{
+              display: inline-block;
+            }
+          }
+        }
+        @media only screen and (max-width: 767px) {
+          &:nth-last-child(1){
+            display: none;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px){
+       padding-left:.5rem;
+    }
+  }
+  .appList{
+    width: 100%;
+    display: inline-block;
+    ul{
+      li{
+        width: 20%;
+        display: inline-block;
+        float: left;
+        margin: .3rem 0;
+        text-align: center;
+        .appitem{
+          padding: .5rem 0;
+          display: block;
+          width: 90%;
+          margin: 0 auto;
+          @include border-radius(5px);
+          @include transition($Default-Transition);
+          border: #ddd solid 1px;
+          cursor: pointer;
+          .appimg{
+            margin: .2rem 0;
+          }
+          p{
+            margin: .2rem 0;
+            span{
+              color: #33ba95;
+              padding: 0 .2rem;
+            }
+          }
+          a{
+            display: block;
+            width: 1.75rem;
+            height: 1.75rem;
+            margin: 0 auto;
+            overflow: hidden;
+            @include border-radius(5px);
+            img{
+              width: 100%;
+              vertical-align: middle;
+              @include opacity(1);
+            }
+          }
+          &:hover{
+            border: 1px solid rgba(11, 185, 149, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(11, 185, 149, 0.6);
+          }
+        }
+        &:nth-child(1){
+          margin-left: 0;
+        }
+        &:nth-last-child(1){
+          margin-right: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 767px){
+      ul{
+        li{
+          width: 100%;
+          display: block;
+          margin: 0;
+          overflow: hidden;
+          .appitem{
+            display: inline-block;
+            border: none;
+            border-bottom: #ddd solid 1px;
+            @include border-radius(0);
+            padding: .2rem .8rem;
+            width: 100%;
+            .appimg{
+              display: inline-block;
+              float: left;
+            }
+            .right{
+              display: inline-block;
+              float: left;
+              text-align: left;
+              padding-left: .3rem;
+            }
+            &:hover{
+              .title{
+                color: #33ba95;
+              }
+              border: 0;
+              border-bottom: #ddd solid 1px;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &:after{
+    @extend %after;
+  }
+}
+
+//backtotop
+.backtotop{
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  @include text-shadow($Default-BoxShadow);
+  .TotopButton{
+    width: 1rem;
+    height: 1rem;
+    line-height: .8rem;
+    background: #33ba95;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: .5rem;
+  }
+}
+
+//mobile-slide-nav
+.mobile-slide-nav{
+  &.open{
+    display: inline-block;
+  }
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  .slide-content{
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    background: #fff;
+    .header{
+      display: inline-block;
+      width: 100%;
+      padding: .67rem 0;
+      background: #151e28;
+      font-size: 1.5rem;
+      color: #fff;
+      .fa{
+        float: right;
+        padding-right: 1rem;
+      }
+    }
+    .nav{
+      overflow: hidden;
+      li{
+        width: 100%;
+        display: inline-block;
+        padding: .6rem 0;
+        border-bottom: #dddddd solid 1px;
+        a{
+          color: #666666;
+          padding-left: 1rem;
+        }
+        &.dropdown{
+          padding: 0;
+          @include transition($Default-Transition);
+          &.active{
+            .clickdrop{
+              background: #ddd;
+            }
+          }
+          .fa{
+            float: right;
+            margin-right: 20%;
+          }
+          &:active{
+            background: none;
+          }
+          a{
+            display: inline-block;
+            width: 100%;
+            padding: 0.6rem 0 0.6rem 1rem;
+            position: relative;
+            &.active{
+              background: #ddd;
+            }
+          }
+          .self{
+            display: none;
+            li{
+              padding: 0;
+              padding-left: 1.3rem;
+              border-bottom: none;
+              position: relative;
+              &:nth-last-child(1){
+                a{
+                  &:after{
+                    content: none;
+                  }
+                }
+              }
+              a{
+                &:after{
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 1px;
+                  background: #ddd;
+                  bottom: 0;
+                  right: 0;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+        &:active{
+          background: #dddddd;
+        }
+      }
+    }
+  }
+}
