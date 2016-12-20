@@ -12,7 +12,7 @@
 
 ##Authors
 **majing(Piero)**
-- [Blog － http://blog.pierrothall.com/](http://blog.pierrothall.com/)
+- [Blog － http://www.mjpiero.cc/](http://www.mjpiero.cc/)
 - [Email － merlu.majing@gmail.com](http://merlu.majing@gmail.com)
 
 ##Issues
