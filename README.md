@@ -10,10 +10,10 @@
 <br/>
 <img src="./doc/mobile2.png">
 
-##Authors
+## Authors
 **majing(Piero)**
 - [Blog － http://www.mjpiero.cc/](http://www.mjpiero.cc/)
 - [Email － merlu.majing@gmail.com](http://merlu.majing@gmail.com)
 
-##Issues
+## Issues
 [Report a Problem](https://github.com/MJPiero/WebResponsive-demo/issues)
